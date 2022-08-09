@@ -5,6 +5,8 @@
  */
 package bracket.generator;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author brend
@@ -17,7 +19,22 @@ public class BracketGenerator
      */
     public static void main(String[] args)
     {
-        // TODO code application logic here
+        int iterator;
+        PersonNode selectedPerson;
+        String listname = "test.txt";
+        ListGenerator listgenerator = new ListGenerator();
+        ArrayList<PersonNode> testlist = listgenerator.GenerateList(listname);
+        if (testlist != null)
+        {
+            int people = testlist.size();
+            for(iterator = 0; iterator < people; iterator++)
+            {
+                selectedPerson = testlist.get(iterator);
+                System.out.println(selectedPerson.getName());
+                System.out.println(selectedPerson.getSeed());
+            }
+        }
+                
     }
     
 }
